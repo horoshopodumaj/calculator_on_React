@@ -1,6 +1,7 @@
 import React from "react";
 import Total from "./components/total/Total";
 import History from "./components/history/History";
+import Operation from "./components/operation/Operation";
 
 function App() {
     return (
@@ -14,39 +15,7 @@ function App() {
                 <div className="container">
                     <Total />
                     <History />
-                    <section className="operation">
-                        <h3>Новая операция</h3>
-                        <form id="form">
-                            <label>
-                                <input
-                                    type="text"
-                                    className="operation__fields operation__name"
-                                    placeholder="Наименование операции"
-                                />
-                            </label>
-                            <label>
-                                <input
-                                    type="number"
-                                    className="operation__fields operation__amount"
-                                    placeholder="Введите сумму"
-                                />
-                            </label>
-                            <div className="operation__btns">
-                                <button
-                                    type="submit"
-                                    className="operation__btn operation__btn-subtract"
-                                >
-                                    РАСХОД
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="operation__btn operation__btn-add"
-                                >
-                                    ДОХОД
-                                </button>
-                            </div>
-                        </form>
-                    </section>
+                    <Operation />
                 </div>
             </main>
         </React.Fragment>
