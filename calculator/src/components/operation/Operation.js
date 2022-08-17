@@ -1,6 +1,12 @@
 import React from "react";
 
-const Operation = ({ addTransaction, addDescription, addAmount }) => (
+const Operation = ({
+    addTransaction,
+    addDescription,
+    addAmount,
+    description,
+    amount,
+}) => (
     <section className="operation">
         <h3>Новая операция</h3>
         <form id="form">
@@ -10,6 +16,7 @@ const Operation = ({ addTransaction, addDescription, addAmount }) => (
                     className="operation__fields operation__name"
                     placeholder="Наименование операции"
                     onChange={addDescription}
+                    value={description}
                 />
             </label>
             <label>
@@ -18,6 +25,7 @@ const Operation = ({ addTransaction, addDescription, addAmount }) => (
                     className="operation__fields operation__amount"
                     placeholder="Введите сумму"
                     onChange={addAmount}
+                    value={amount}
                 />
             </label>
             <div className="operation__btns">
