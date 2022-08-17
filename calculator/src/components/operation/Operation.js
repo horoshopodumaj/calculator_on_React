@@ -1,6 +1,6 @@
 import React from "react";
 
-const Operation = () => (
+const Operation = ({ addTransaction }) => (
     <section className="operation">
         <h3>Новая операция</h3>
         <form id="form">
@@ -20,13 +20,13 @@ const Operation = () => (
             </label>
             <div className="operation__btns">
                 <button
-                    type="submit"
+                    type="button"
                     className="operation__btn operation__btn-subtract"
                 >
                     РАСХОД
                 </button>
                 <button
-                    type="submit"
+                    type="button"
                     className="operation__btn operation__btn-add"
                 >
                     ДОХОД
