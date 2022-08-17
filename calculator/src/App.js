@@ -41,7 +41,7 @@ class App extends Component {
                 <main>
                     <div className="container">
                         <Total />
-                        <History />
+                        <History transactions={this.state.transactions} />
                         <Operation
                             addTransaction={this.addTransaction}
                             addAmount={this.addAmount}
