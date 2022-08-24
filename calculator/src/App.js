@@ -17,6 +17,10 @@ class App extends Component {
         this.getTotalBalance();
     }
 
+    componentDidUpdate() {
+        this.addStorage();
+    }
+
     addTransaction = (add) => {
         const transactions = [...this.state.transactions];
         const transaction = {
@@ -27,10 +31,10 @@ class App extends Component {
         };
 
         transactions.push(transaction);
-        this.setState({ transactions, description: "", amount: "" }, () => {
-            this.getTotalBalance();
-            this.addStorage();
-        });
+        this.setState(
+            { transactions, description: "", amount: "" },
+            this.getTotalBalance
+        );
     };
 
     addAmount = (event) => {
@@ -90,7 +94,7 @@ class App extends Component {
                             totalBalance={this.state.totalBalance}
                         />
                         <History
-                            transactions={this.state.transactions}
+                            transactions={[...this.state.transactions]}
                             delTransaction={this.delTransaction}
                         />
                         <Operation
